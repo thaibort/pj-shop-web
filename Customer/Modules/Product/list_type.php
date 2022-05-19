@@ -39,7 +39,7 @@
 	}
 ?>
 <?php 
-	$title = "THAISTORE";
+	$title = "BKC";
 	require_once 'layout/top.php'; 
 ?>
 <br><br><br>
@@ -87,7 +87,7 @@
 		    	echo '<td class="item">';
 	    	    	echo "<a id='link' href='index.php?module=Product&action=detail&id=$id&name=$name'><br>";
 		    	    	$pic = $row['pic'];
-		    	    	echo "<img src='$pic' width='150px' height='150px;'><br>";
+		    	    	echo "<img src='$pic' width='150px' height='150px;' class='mx-auto'><br>";
 		    	    	echo $name.'<br>';
 		    	    	echo number_format($row['pri'],0,'','.')." đ";
 	    	    	echo '</a>';
@@ -127,47 +127,4 @@
 		?>
 	</tr>
 </table>
-
-<!-- Menu trái -->
-<div id="left">
-	<h3>Các hãng <?php echo $type; ?></h3><br>
-	
-	<table id="brand" cellspacing="0" cellpadding="0">
-		<tr>
-			<td class='menu_brand'>
-				<a href="<?php echo "index.php?module=Product&action=list_type&type=$type" ?>" class="br">Tất cả sản phẩm</a>
-			</td>
-		</tr>
-		<tr>
-			<?php  
-				$sql = "SELECT DISTINCT brand.name_brand from product
-						INNER JOIN type  ON product.id_type = type.id 
-						INNER JOIN brand  ON product.id_brand = brand.id WHERE type.name_type = '$type'";
-				$rs4 = mysqli_query($conn,$sql);
-				if (!$rs4) {
-					echo 'Lỗi: '.mysqli_error($conn);
-				}
-				$total = mysqli_num_rows($rs4);
-				$count = 0;
-				while ($count != $total) {
-			    	while ($row = mysqli_fetch_assoc($rs4)) {
-						echo "<td class='menu_brand'>";
-							$brand1 = $row['name_brand'];
-							echo '<a class="br" href="index.php?module=Product&action=list_type&type='.$type.'&brand='.$brand1.'">';
-								echo '<span class="text1">';
-									echo $row['name_brand'];
-								echo '</span>';
-							echo '</a>';
-						echo "</td>";
-				    	$count ++;
-			    	    if ($count % 1 == 0 && $count < $total) {
-			    	    	echo "</tr>";
-			    	    	echo "<tr>";
-			    	    }
-			    	}
-				}
-			?>
-		</tr>
-	</table>
-</div>
 <?php require_once 'layout/bottom.php'; ?>

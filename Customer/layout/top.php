@@ -341,7 +341,6 @@
 			}
 			</style>
 		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-		<link rel="icon" type="image/png" href="../Public/image/logo3.png">
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body>

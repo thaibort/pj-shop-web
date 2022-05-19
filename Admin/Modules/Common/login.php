@@ -31,7 +31,6 @@
 	<head>
 		<title>Admin</title>
 		<meta charset="utf-8">
-		<link rel="icon" type="image/png" href="../Public/image/logo3.png">
 		<style type="text/css">
 			*{
 				margin: 0;

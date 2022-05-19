@@ -1,6 +1,6 @@
 <?php 
 	$sql = "SELECT id,name,pic,pri from product";
-	$title = "THAISTORE";
+	$title = "BKC";
 	require_once 'layout/top.php'; 
 ?>
 <br><br><br>

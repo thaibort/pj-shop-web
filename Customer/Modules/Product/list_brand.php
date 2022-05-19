@@ -34,7 +34,7 @@
 	}
 ?>
 <?php 
-	$title = "THAISTORE";
+	$title = "BKC";
 	require_once 'layout/top.php'; 
 ?>
 <br><br><br>
